@@ -2,31 +2,20 @@ package no.hvl.dat102;
 
 import no.hvl.dat102.adt.FilmarkivADT;
 
-import java.util.Arrays;
 
 public class Filmarkiv2 implements FilmarkivADT{
     private int antall;
     private LinearNode<Film> start;
-    // Ingen referanse til siste, kun start
-    ...
-    /*  Klassen skal ha de samme operasjoner som for Filmarkiv i
-        øving 2, men pass på at implementeringen av alle metoder
-        blir tilpasset den nye strukturen. */
-
-
 
 
 
     public Filmarkiv2() {
-        this.antall=0;
 
+        this.antall = 0;
     }
 
-    private Film[] utvid(Film[] tmp) {
 
-    return null;
 
-    }
 
     @Override
     public Film finnFilm(int nr) {
@@ -60,6 +49,11 @@ public class Filmarkiv2 implements FilmarkivADT{
 
     @Override
     public boolean slettFilm(int filmnr) {
+        if(finnFilm(filmnr) == null){
+            return false;
+        }else{
+            
+        }
 
         if (finnFilm(filmnr) != null) {
 
@@ -85,6 +79,17 @@ public class Filmarkiv2 implements FilmarkivADT{
 
     @Override
     public int antall(Sjanger sjanger) {
+
+        LinearNode<Film> node = start;
+        int antall = 0;
+
+        for (int i = 0; i<=antall(); i++){
+            if (node.getElement().getSjanger() == sjanger){
+                antall++;
+            }
+            node = node.getNeste();
+        }
+        return antall;
 
 
     }
