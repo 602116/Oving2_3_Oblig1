@@ -73,6 +73,23 @@ public class Filmarkiv2 implements FilmarkivADT{
 
     @Override
     public Film[] soekTittel(String delstreng) {
+        Film[] search = new Film [antall()];
+        int antallsok = 0;
+
+        LinearNode<Film> node = start;
+
+        for (int i = 0; i < antall(); i++) {
+
+            if (node.getElement().getTittel().contains(delstreng)){
+
+                search[antallsok] = node.getElement();
+                antallsok++;
+
+            }
+            node = node.getNeste();
+        }
+
+        return search;
 
 
     }
@@ -83,7 +100,9 @@ public class Filmarkiv2 implements FilmarkivADT{
         LinearNode<Film> node = start;
         int antall = 0;
 
-        for (int i = 0; i<=antall(); i++){
+        for (int i = 0; i<antall(); i++){
+
+
             if (node.getElement().getSjanger() == sjanger){
                 antall++;
             }
