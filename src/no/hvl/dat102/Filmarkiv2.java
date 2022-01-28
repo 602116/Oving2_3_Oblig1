@@ -49,11 +49,6 @@ public class Filmarkiv2 implements FilmarkivADT{
 
     @Override
     public boolean slettFilm(int filmnr) {
-        if(finnFilm(filmnr) == null){
-            return false;
-        }else{
-            
-        }
 
         if (finnFilm(filmnr) != null) {
 
