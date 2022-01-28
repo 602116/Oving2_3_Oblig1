@@ -95,7 +95,7 @@ public class Filmarkiv2 implements FilmarkivADT{
         LinearNode<Film> node = start;
         int antall = 0;
 
-        for (int i = 0; i<antall(); i++){
+        for (int i = 0; i<=antall(); i++){
 
 
             if (node.getElement().getSjanger() == sjanger){
@@ -114,3 +114,10 @@ public class Filmarkiv2 implements FilmarkivADT{
     }
 
 }
+
+// La k være antall sjangre og n være antall filmer. Hva er tidskompleksiteten uttrykt i O-notasjon med
+//k og n for de to metodene i) og ii) under? Begrunn svaret.
+//i)  antallSjanger(Sjanger sjanger) og
+//ii) skrivUtStatistikk(FilmarkivADT film)
+
+// O(n) er kompleksiteten til disse to K*n der k er en konstant og n er en variabel.
